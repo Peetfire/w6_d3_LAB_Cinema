@@ -51,15 +51,25 @@ describe('Cinema', function () {
     assert.deepStrictEqual(actual, expected);
   });
   it('should be able to check whether there are no films from a particular year', function(){
-    const actual = cinema.getFilmsByYear(2022);
-    const expected = [];
+    const actual = cinema.checkNoFilmsByYear(2022);
+    const expected = true;
     assert.deepStrictEqual(actual, expected);
+    const actual2 = cinema.checkNoFilmsByYear(2017);
+    const expected2 = false;
+    assert.deepStrictEqual(actual2, expected2);
   });
   it('should be able to check whether all films are over a particular length', function(){
     const actual = cinema.allFilmsLongerThan(90);
     const expected = true;
     assert.strictEqual(actual, expected);
+    const actual2 = cinema.allFilmsLongerThan(100);
+    const expected2 = false;
+    assert.strictEqual(actual2, expected2);
   });
-  it('should be able to calculate total running time of all films');
+  it('should be able to calculate total running time of all films', function(){
+    const actual = cinema.getTotalRunTime();
+    const expected = 622;
+    assert.strictEqual(actual, expected);
+  });
 
 });

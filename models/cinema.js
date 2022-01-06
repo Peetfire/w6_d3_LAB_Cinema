@@ -15,7 +15,13 @@ Cinema.prototype.getFilmsByGenre = function(genre){
 Cinema.prototype.getFilmsByYear = function(year){
   return this.films.filter(film => film.year === year);
 }
+Cinema.prototype.checkNoFilmsByYear = function(year){
+  return this.films.every(film => film.year !== year);
+}
 Cinema.prototype.allFilmsLongerThan = function(time){
   return this.films.every(film => film.length >= time);
+}
+Cinema.prototype.getTotalRunTime = function(){
+  return this.films.reduce((total, film) => total + film.length, 0)
 }
 module.exports = Cinema;
