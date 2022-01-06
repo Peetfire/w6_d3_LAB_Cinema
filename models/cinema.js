@@ -9,5 +9,8 @@ Cinema.prototype.getFilmTitles = function(){
 Cinema.prototype.getFilmByTitle = function(title){
   return this.films.filter(film => film.title === title);
 }
+Cinema.prototype.getFilmsByGenre = function(genre){
+  return this.films.filter(film => film.genre === genre);
+}
 
 module.exports = Cinema;
