@@ -24,4 +24,7 @@ Cinema.prototype.allFilmsLongerThan = function(time){
 Cinema.prototype.getTotalRunTime = function(){
   return this.films.reduce((total, film) => total + film.length, 0)
 }
+Cinema.prototype.getFilmsByProperty = function(property, value){
+  return this.films.filter(film => film[property] === value);
+}
 module.exports = Cinema;
